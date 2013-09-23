@@ -9,7 +9,7 @@ end
 class Redis
   class Settings
     require "redis/settings/active_record" if defined?(ActiveRecord)
-    require "redis/settings/railtie" if defined?(Rails) && Rails.version >= "3.0.0"
+    require "redis/settings/railtie" if defined?(::Rails) && ::Rails.version >= "3.0.0"
 
     class NewRecordError < StandardError
       def message; "You can't access settings on new records"; end
